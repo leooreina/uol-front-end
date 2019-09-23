@@ -2,15 +2,18 @@ import React, { Component } from 'react'
 import '../css/episodes.css'
 
 class Episodes extends Component {
+
+  // apply movies state
   state = {
-    movies: [],
-    moviesFiltered: []
+    movies: []
   }
 
+  // load data when component is mounted
   componentDidMount() {
     this.receiveMoviesInfo()
   }
 
+  // Load data request
   receiveMoviesInfo = () => {
     fetch('https://raw.githubusercontent.com/leooreina/uol-front-end/master/src/data/films.json')
     .then(response => {
