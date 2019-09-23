@@ -6,6 +6,7 @@ let sortBy = require('sort-by')
 
 class List extends Component {
 
+  // Save states. data and default filters
   state = {
     clicks: false,
     filteredData: [],
@@ -13,9 +14,12 @@ class List extends Component {
     filterTwo: 'name'
   }
 
+  // load data when component is mounted
   componentDidMount() {
     this.receiveData()
   }
+
+  // Load data request
 
   receiveData = () => {
     fetch('https://raw.githubusercontent.com/leooreina/uol-front-end/master/src/data/people.json')
@@ -32,12 +36,16 @@ class List extends Component {
     })
   }
 
+  // change filter according what is passed
+
   changeFilter = (propOnePassed, propTwoPassed) => {
     this.setState({
       filterOne: propOnePassed,
       filterTwo: propTwoPassed
     })
   }
+
+  // add class "active" to the button that is clicked
 
   active = (e) => {
     const { clicks } = this.state
