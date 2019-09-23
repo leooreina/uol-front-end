@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../css/episodes.css'
 
 class Episodes extends Component {
   state = {
@@ -28,15 +29,20 @@ class Episodes extends Component {
   render() {
     const { movies } = this.state
     return (
-        <div>
-          {movies.map(movie => (
-            this.props.match.params.episode == movie.episode_id &&
-            <div key={movie.episode_id}>
-              <h2>{movie.title} | Episode {this.props.match.params.episode}</h2>
-              <p>{movie.opening_crawl}</p>
-            </div>
-          ))}
-        </div>
+        <React.Fragment>
+          <div class="fade"></div>
+          <div className="episodes">
+            {movies.map(movie => (
+              this.props.match.params.episode == movie.episode_id &&
+              <div className="crawl" key={movie.episode_id}>
+                <h2 className="movie-title">{movie.title} | Episode {this.props.match.params.episode}</h2>
+                <p className="movie-opening">{movie.opening_crawl}</p>
+                <p className="movie-opening">Directed By: {movie.director}</p>
+                <p className="movie-opening">Produced By: {movie.producer}</p>
+              </div>
+            ))}
+          </div>
+        </React.Fragment>
     )
   }
 }

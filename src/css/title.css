@@ -1,19 +1,51 @@
-body {
-  background-color: #c3edf9;
-  color: #385669;
-  font-family: 'Nunito', sans-serif;
-  font-size: 18pt;
-  font-weight: 500;
+@media (min-width: 320px) and (max-width: 540px) {
+  body {
+    background-color: #c3edf9;
+    color: #385669;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18pt;
+    font-weight: 500;
+  }
+
+  .app {
+    text-align: left;
+    z-index: 0;
+  }
+
+  .title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 38pt;
+    color: #256791;
+    text-align: center;
+    background-color: #c3edf9;
+    z-index: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
-.app {
-  text-align: left;
-}
+@media (min-width: 541px) {
+  body {
+    background-color: #c3edf9;
+    color: #385669;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18pt;
+    font-weight: 500;
+  }
 
-.title {
-  font-family: 'Nunito', sans-serif;
-  font-size: 52pt;
-  color: #256791;
-  text-align: center;
-  background-color: #c3edf9;
+  .app {
+    text-align: left;
+    z-index: 0;
+  }
+
+  .title {
+    font-family: 'Nunito', sans-serif;
+    font-size: 52pt;
+    color: #256791;
+    text-align: center;
+    background-color: #c3edf9;
+    z-index: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
