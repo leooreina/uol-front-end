@@ -1,0 +1,64 @@
+.appearances {
+  color: #1b2d47;
+  font-size: 20pt;
+  font-weight: 900;
+  margin-left: 10%;
+}
+
+.movies {
+  margin: 20px 0 20px 0;
+}
+
+.episode-list {
+  margin: 10px 0 10px 20px;
+}
+
+.episode-item {
+  font-size: 16pt;
+  color: #69b2ca;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 120px;
+}
+
+.episode-item:hover {
+  color: #c3edf9;
+  background-color: #256791;
+  border-radius: 15px;
+}
+
+.link {
+  width: 120px;
+}
+
+.person-name {
+  color: #256791;
+}
+
+.filters {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.filter-options {
+  border-width: 0;
+  border-radius: 20px;
+  margin: 0 10px 0 10px;
+  width: 15%;
+  height: 30px;
+  background-color: #256791;
+  color: #69b2ca;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16pt;
+  font-weight: 900;
+}
+
+.filter-options:hover {
+  cursor: pointer;
+  background-color: #1b2d47;
+  color: #69b2ca;
+}
+
+.active {
+  background-color: #1b2d47;
+}

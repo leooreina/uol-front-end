@@ -1,0 +1,19 @@
+body {
+  background-color: #c3edf9;
+  color: #385669;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18pt;
+  font-weight: 500;
+}
+
+.app {
+  text-align: left;
+}
+
+.title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 52pt;
+  color: #256791;
+  text-align: center;
+  background-color: #c3edf9;
+}

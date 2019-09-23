@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { filters } from '../utils/utils'
+import '../css/list.css'
 let sortBy = require('sort-by')
 
 class List extends Component {
 
   state = {
-    jsonData: [],
+    clicks: false,
     filteredData: [],
     filterOne: '-films.length',
     filterTwo: 'name'
@@ -22,7 +23,6 @@ class List extends Component {
       response.json()
       .then(data => {
         this.setState({
-          jsonData: data.results,
           filteredData: data.results
         })
       })
@@ -39,29 +39,47 @@ class List extends Component {
     })
   }
 
+  active = (e) => {
+    const { clicks } = this.state
+    if (clicks === true) {
+      let elementActive = document.getElementsByClassName('active')
+      elementActive[0].classList.remove('active')
+      this.setState({ clicks: false})
+    }
+    e.target.classList.add('active')
+    this.setState({ clicks: true })
+  }
+
   render() {
     const { filteredData, filterOne, filterTwo } = this.state
     return (
       <React.Fragment>
 
-        {filters.map(button => (
-          <button key={button.id} onClick={() => {this.changeFilter(button.filterOne, button.filterTwo)}}>
-            {button.filterName}
-          </button>
-        ))}
+        <div className='filters'>
+          <h3>Filter Options: </h3>
+          {filters.map(button => (
+            <button id={button.id} className="filter-options" key={button.id} onClick={() => {
+              this.changeFilter(button.filterOne, button.filterTwo)
+            }} onFocus={this.active}>
+              {button.filterName}
+            </button>
+          ))}
+        </div>
 
         {filteredData.sort(sortBy(filterOne, filterTwo))
           .map((person) =>
-          <div key={person.id}>
-            {person.name} | { person.films.length > 1 ? `${person.films.length} Participações` : `${person.films.length} Participação` } |
+          <div className="appearances" key={person.id}>
+            <span className="person-name">{person.name}</span> | { person.films.length > 1 ? `${person.films.length} Appearances` : `${person.films.length} Appearance` }
 
-            <div style={{marginTop: '20px', marginBottom: '20px'}}>
-            Filmes: {person.films.map((item, index) => (
-              <Link key={index} to={`/episode/${item}`} style={{textDecoration: 'none'}}>
-                <div style={{marginLeft: '10px', fontSize: '14pt'}}>
-                  Episódio {item}
+            <div className="movies">
+            Movies: {person.films.map((item, index) => (
+
+                <div className="episode-list">
+                  <Link key={index} to={`/episode/${item}`} style={{textDecoration: 'none', color: '#69b2ca'}}>
+                    <span className="episode-item">Episode {item}</span>
+                  </Link>
                 </div>
-              </Link>
+
             ))}
             </div>
           </div>

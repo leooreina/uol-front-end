@@ -1,24 +1,24 @@
 export const filters = [
   {
-    filterName: 'Nome',
+    filterName: 'Name',
     filterOne: 'name',
     filterTwo: '-films-length',
     id: 'filterByName'
   },
   {
-    filterName: 'Gênero',
+    filterName: 'Gender',
     filterOne: 'gender',
     filterTwo: '-films-length',
     id: 'filterByGender'
   },
   {
-    filterName: 'Filmes',
+    filterName: 'Movies',
     filterOne: '-films.length',
     filterTwo: 'name',
     id: 'filterByMovies'
   },
   {
-    filterName: 'Altura',
+    filterName: 'Height',
     filterOne: 'height',
     filterTwo: '-films-length',
     id: 'filterByHeight'
