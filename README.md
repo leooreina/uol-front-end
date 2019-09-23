@@ -7,6 +7,12 @@ Construído com React, o web app se propõe em consumir dados JSON
 baseados nos filmes do Star Wars e mostrar esses dados de diversas
 formas para o usuário.
 
+# Agradecimentos
+
+Queria agradecer Geoff Graham (@geoffreygraham) pelo tutorial muito bem explicado para
+fazer o efeito da abertura dos filmes com CSS.
+link: `https://css-tricks.com/snippets/css/star-wars-crawl-text/`
+
 # Como rodar
 
 Para rodá-lo, você deve possuir o Node JS instalado e deve seguir
